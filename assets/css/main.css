@@ -102,7 +102,7 @@ section .content p {
   }
   
   #container {
-    height: 800px;
+    height: 300px;
     width: 100%;
     box-sizing: border-box;
   }
@@ -117,9 +117,9 @@ section .content p {
   }
   
   #tilesContainer {
-    min-height: 90vh;
+    margin-top: 30px;
+    height: 300px;
     width: 100vw;
-    margin-top: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -130,8 +130,8 @@ section .content p {
   }
   
   .tileItem {
-    width: 250px;
-    height: 250px;
+    width: 110px;
+    height: 110px;
     margin: 5px;
     border-radius: 5px;
     
@@ -144,7 +144,7 @@ section .content p {
   }
   
   #galleryContainer { 
-    height: 500px;
+    height: 300px;
     width: 800px;
     background: transparent;
     display: flex;
@@ -164,7 +164,7 @@ section .content p {
   }
   
   #tilesView {
-    min-height: 100vh;
+    height: 100%;
     width: 100vw;
     background: rgb(246,210,106);
     background: linear-gradient(111deg, rgba(246,210,106,1) 0%, rgba(255,159,0,1) 52%, rgba(251,197,100,1) 100%);
@@ -175,7 +175,7 @@ section .content p {
   }
   
   #galleryView {
-    height: 40%;
+    height: 100%;
     width: 100vw;
     background: rgb(246,210,106);
     background: linear-gradient(111deg, rgba(246,210,106,1) 0%, rgba(255,159,0,1) 52%, rgba(251,197,100,1) 100%);
@@ -234,7 +234,7 @@ section .content p {
   }
   
   #leftView {
-    height: 40%;
+    height: 60%;
     width: 150px;
     opacity: 0.5;
     border-radius: 5px;
@@ -253,7 +253,7 @@ section .content p {
   }
   
   #rightView {
-    height: 40%;
+    height:60%;
     width: 150px;
     opacity: 0.5;
     border-radius: 5px;
