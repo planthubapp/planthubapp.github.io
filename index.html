@@ -1,13 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
-</head>
-<body>
-    <div id="triangle-topright"></div>
-</body>
+    <script
+      src="https://kit.fontawesome.com/372a4b2b76.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    
+    <div class="header">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Buy Pots</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Top searched</a></li>
+        <li><a href="">Top Sellers</a></li>
+        <li>
+          <label for="search">
+            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+          </label>
+        </li>
+        <li>
+          <div class="search_box">
+            <input type="text" id="search" />
+          </div>
+        </li>
+        <li><a href="">Login</a></li>
+        <li><a href="">Regsiter</a></li>
+      </ul>
+    </div>
+    <section>
+      <div class="content">
+        <h2>Welcome to PlantHUB</h2>
+        <p>The ultimate plant buying and selling website</p>
+      </div>
+      <!-- content -->
+    </section>
+    <div id="container">
+      <div id="toggleContainer">
+        <label>Carousel</label>
+        <div id="toggle">
+          <div id="outer3">
+            <div id="slider3"></div>
+          </div>
+          <label>Tiles</label>
+        </div>
+      </div>
+      <div id="galleryView">
+        <div id="galleryContainer">
+          <div id="leftView"></div>
+          <button id="navLeft" class="navBtns">
+            <i class="fas fa-arrow-left fa-3x"></i>
+          </button>
+          <a id="linkTag">
+            <div id="mainView"></div>
+          </a>
+          <div id="rightView"></div>
+          <button id="navRight" class="navBtns">
+            <i class="fas fa-arrow-right fa-3x"></i>
+          </button>
+        </div>
+      </div>
+      <div id="tilesView">
+        <div id="tilesContainer"></div>
+      </div>
+    </div>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
