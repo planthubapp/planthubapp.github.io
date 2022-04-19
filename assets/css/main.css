@@ -1,0 +1,7 @@
+#triangle-topright {
+    width: 0;
+    height: 0;
+    margin: 0 0;
+    border-top: 100px solid red;
+    border-left: 100px solid transparent;
+  }
