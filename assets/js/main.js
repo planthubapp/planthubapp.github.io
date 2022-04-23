@@ -1,3 +1,15 @@
+var BASE_URL = "https://plant-hub-api.herokuapp.com";
+category_index = 0;
+var json;
+var categories = [
+  "Summer",
+  "Winter",
+  "Spring",
+  "Autumn",
+  "Flowering",
+  "Indoor",
+];
+var category = categories[0];
 
 let imgObject = [
   "https://placeimg.com/450/450/any",
@@ -69,3 +81,34 @@ document.addEventListener("keyup", function (e) {
 });
 
 loadGallery();
+
+function view_by_category() {
+  var http = new XMLHttpRequest();
+  var url = BASE_URL + "/view_plants_by_category?category=" + category;
+  http.onreadystatechange = function () {
+    if (http.readyState == 4 && http.status == 200) {
+      json = JSON.parse(this.responseText);
+      plants = json.AllPlants;
+      console.log(json);
+      // changeContent();
+    }
+    if (http.readyState == 4 && http.status == 500) {
+      Swal.fire({
+        icon: "warning",
+        title: "Oops...",
+        text: "Oops Something went wrong...",
+      });
+    }
+    if (http.readyState == 4 && http.status == 404) {
+      Swal.fire({
+        icon: "warning",
+        title: "Oops...",
+        text: "Oops, There's no Product with that name...",
+      });
+    }
+  };
+  http.open("get", url, true);
+  http.setRequestHeader("Content-Type", "application/json");
+  http.send();
+}
+view_by_category();
