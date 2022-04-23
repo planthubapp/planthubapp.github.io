@@ -281,20 +281,25 @@ section .content p {
 }
 .card-image {
   background-image: url(https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg);
+  background-position: center;
+  background-size: cover;
   height: 100%;
   width: 100%;
   position: absolute;
   border-radius: 30px;
 }
 .card-text {
-  height: 13%;
-  width: 98%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height: 18%;
+  width: 100%;
   bottom: 0%;
   /* margin-left: 4px; */
   position: absolute;
-  text-align: center;
-  border-radius: 30px;
-  background: rgba(0, 0, 0, 0.336);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  background: rgba(0, 0, 0, 0.538);
 }
 
 .footer-gray {
