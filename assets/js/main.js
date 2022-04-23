@@ -1,6 +1,6 @@
 var BASE_URL = "https://plant-hub-api.herokuapp.com";
 category_index = 0;
-var json;
+var plants;
 var categories = [
   "Summer",
   "Winter",
@@ -88,8 +88,6 @@ function view_by_category() {
       json = JSON.parse(this.responseText);
       plants = json.AllPlants;
       console.log(json);
-      addCard();
-      // changeContent();
     }
     if (http.readyState == 4 && http.status == 500) {
       Swal.fire({
@@ -100,13 +98,15 @@ function view_by_category() {
     }
     if (http.readyState == 4 && http.status == 404) {
       json = JSON.parse(this.responseText);
-      addCard();
+      plants = json.AllPlants;
       Swal.fire({
         icon: "warning",
         title: "Oops...",
         text: "Oops, There's no Product with that name...",
       });
     }
+    
+    addCard();
   };
   http.open("get", url, true);
   http.setRequestHeader("Content-Type", "application/json");
@@ -117,27 +117,23 @@ view_by_category();
 function addCard() {
   var div = document.querySelector("#inner-card-container");
   div.innerHTML = "";
-  console.log(json.AllPlants)
 
-  if (json.AllPlants == null) {
-    console.log("Kuch ni h")
-
-  } else {
+  if (plants != null) {
     for (let i = 0; i < json.AllPlants.length; i++) {
       var card = document.createElement("div");
       card.className = "card";
       var cardImage = document.createElement("div");
       cardImage.className = "card-image";
       cardImage.style.backgroundImage =
-        "url(" + json.AllPlants[i].Plant_image["Lx2H"] + ")";
+        "url(" + plants[i].Plant_image["Lx2H"] + ")";
       card.appendChild(cardImage);
       var cardText = document.createElement("div");
       cardText.className = "card-text";
-      var p_name = json.AllPlants[i].Plant_name;
-      if (p_name.length > 20) {
-        p_name = p_name.substring(0, 20) + "...";
+      var plant_name = plants[i].Plant_name;
+      if (plant_name.length > 20) {
+        plant_name = plant_name.substring(0, 20) + "...";
       }
-      cardText.innerText = p_name;
+      cardText.innerText = plant_name;
       cardImage.appendChild(cardText);
       div.appendChild(card);
     }
