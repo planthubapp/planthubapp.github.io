@@ -9,16 +9,16 @@ var categories = [
   "Flowering",
   "Indoor",
 ];
+var imgObject = [
+  "https://wallpaperaccess.com/full/6606130.jpg",
+  "https://wallpaperaccess.com/full/549556.jpg",
+  "https://wallpapercave.com/wp/wp5561559.jpg",
+  "https://wallpaperaccess.com/full/1234763.jpg",
+  "https://picstatio.com/large/127994/meadow-white-pink-flowers-plants.jpg",
+  "https://media.allure.com/photos/5fdcf516563e46c7d11ee93f/master/pass/AllureBeginnerHouseplants.jpg",
+];
 var category = categories[0];
 
-let imgObject = [
-  "https://placeimg.com/450/450/any",
-  "https://placeimg.com/450/450/animals",
-  "https://placeimg.com/450/450/architecture",
-  "https://placeimg.com/450/450/nature",
-  "https://placeimg.com/450/450/people",
-  "https://placeimg.com/450/450/tech",
-];
 
 var mainImg = 0;
 let prevImg = imgObject.length - 1;
@@ -102,7 +102,7 @@ function view_by_category() {
       Swal.fire({
         icon: "warning",
         title: "Oops...",
-        text: "Oops, There's no Product with that name...",
+        text: "Oops, There's no Plant with that Category...",
       });
     }
     
@@ -137,5 +137,9 @@ function addCard() {
       cardImage.appendChild(cardText);
       div.appendChild(card);
     }
+  }
+  else{
+    div.innerHTML = "No Plants Found";
+    div.style.justifyContent = "center";
   }
 }
