@@ -18,22 +18,16 @@ let imgObject = [
   "https://placeimg.com/450/450/nature",
   "https://placeimg.com/450/450/people",
   "https://placeimg.com/450/450/tech",
-  "https://picsum.photos/id/1/450/450",
-  "https://picsum.photos/id/8/450/450",
-  "https://picsum.photos/id/12/450/450",
-  "https://picsum.photos/id/15/450/450",
-  "https://picsum.photos/id/5/450/450",
 ];
 
-let mainImg = 0;
+var mainImg = 0;
 let prevImg = imgObject.length - 1;
 let nextImg = 1;
 
 function loadGallery() {
   let mainView = document.getElementById("mainView");
   mainView.style.background = "url(" + imgObject[mainImg] + ")";
-  document.getElementById('content').innerHTML = "Summer Plants"
-  
+  document.getElementById("content").innerHTML = `${category} Plants`;
 
   let leftView = document.getElementById("leftView");
   leftView.style.background = "url(" + imgObject[prevImg] + ")";
@@ -48,6 +42,12 @@ function loadGallery() {
 function scrollRight() {
   prevImg = mainImg;
   mainImg = nextImg;
+  if (mainImg == 6) {
+    mainImg = 0;
+  }
+  category = categories[mainImg];
+  view_by_category();
+
   if (nextImg >= imgObject.length - 1) {
     nextImg = 0;
   } else {
@@ -59,6 +59,11 @@ function scrollRight() {
 function scrollLeft() {
   nextImg = mainImg;
   mainImg = prevImg;
+  if (mainImg == -1) {
+    mainImg = 5;
+  }
+  category = categories[mainImg];
+  view_by_category();
 
   if (prevImg === 0) {
     prevImg = imgObject.length - 1;
@@ -72,13 +77,6 @@ document.getElementById("navRight").addEventListener("click", scrollRight);
 document.getElementById("navLeft").addEventListener("click", scrollLeft);
 document.getElementById("rightView").addEventListener("click", scrollRight);
 document.getElementById("leftView").addEventListener("click", scrollLeft);
-document.addEventListener("keyup", function (e) {
-  if (e.keyCode === 37) {
-    scrollLeft();
-  } else if (e.keyCode === 39) {
-    scrollRight();
-  }
-});
 
 loadGallery();
 
@@ -90,6 +88,7 @@ function view_by_category() {
       json = JSON.parse(this.responseText);
       plants = json.AllPlants;
       console.log(json);
+      addCard();
       // changeContent();
     }
     if (http.readyState == 4 && http.status == 500) {
@@ -100,6 +99,8 @@ function view_by_category() {
       });
     }
     if (http.readyState == 4 && http.status == 404) {
+      json = JSON.parse(this.responseText);
+      addCard();
       Swal.fire({
         icon: "warning",
         title: "Oops...",
@@ -112,3 +113,33 @@ function view_by_category() {
   http.send();
 }
 view_by_category();
+
+function addCard() {
+  var div = document.querySelector("#inner-card-container");
+  div.innerHTML = "";
+  console.log(json.AllPlants)
+
+  if (json.AllPlants == null) {
+    console.log("Kuch ni h")
+
+  } else {
+    for (let i = 0; i < json.AllPlants.length; i++) {
+      var card = document.createElement("div");
+      card.className = "card";
+      var cardImage = document.createElement("div");
+      cardImage.className = "card-image";
+      cardImage.style.backgroundImage =
+        "url(" + json.AllPlants[i].Plant_image["Lx2H"] + ")";
+      card.appendChild(cardImage);
+      var cardText = document.createElement("div");
+      cardText.className = "card-text";
+      var p_name = json.AllPlants[i].Plant_name;
+      if (p_name.length > 20) {
+        p_name = p_name.substring(0, 20) + "...";
+      }
+      cardText.innerText = p_name;
+      cardImage.appendChild(cardText);
+      div.appendChild(card);
+    }
+  }
+}
