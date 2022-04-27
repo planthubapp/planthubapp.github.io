@@ -279,6 +279,14 @@ section .content p {
   width: 80%;
   border-radius: 30px;
   position: relative;
+  transition: 500ms ease-in-out;
+
+}
+
+.card:hover{
+  transition: 500ms;
+  transform: translateY(-25px);
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.412)
 }
 .card-image {
   background-image: url(https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg);
