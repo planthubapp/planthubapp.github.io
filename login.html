@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/372a4b2b76.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/login-register.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <img
+      class="wave"
+      src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/wave.png"
+    />
+    <div class="container">
+      <div class="img">
+        <img
+          src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/bg.svg"
+        />
+      </div>
+      <div class="login-content">
+        <div class="form">
+          <img
+            src="https://raw.githubusercontent.com/sefyudem/Responsive-Login-Form/master/img/avatar.svg"
+          />
+          <h2 class="title">Welcome</h2>
+          <div class="input-div one">
+            <div class="i">
+              <i class="fas fa-user"></i>
+            </div>
+            <div class="div">
+              <h5>Email</h5>
+              <input type="text" class="input" id="email" />
+            </div>
+          </div>
+          <div class="input-div pass">
+            <div class="i">
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="div">
+              <h5>Password</h5>
+              <input type="password" class="input" id="pwd" />
+            </div>
+          </div>
+          <a href="#">Forgot Password?</a>
+          <input type="submit" class="btn" value="Login" onclick="login()"/>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/login.js"></script>
+  </body>
+</html>
