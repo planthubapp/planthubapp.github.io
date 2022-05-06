@@ -105,20 +105,18 @@ function view_by_category() {
         text: "Oops, There's no Plant with that Category...",
       });
     }
-    
     addCard();
   };
   http.open("get", url, true);
   http.setRequestHeader("Content-Type", "application/json");
   http.send();
 }
-view_by_category();
-
 function addCard() {
   var div = document.querySelector("#inner-card-container");
   div.innerHTML = "";
 
   if (plants != null) {
+    document.getElementById('loading').style.display="none";
     for (let i = 0; i < json.AllPlants.length; i++) {
       var card = document.createElement("div");
       card.className = "card";
@@ -139,7 +137,7 @@ function addCard() {
     }
   }
   else{
-    div.innerHTML = "No Plants Found";
     div.style.justifyContent = "center";
   }
 }
+view_by_category();
