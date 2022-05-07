@@ -34,5 +34,6 @@ function load_Plant(){
 }
 function displayPlant(){
     console.log(plant);
+    
 }
 load_Plant();
