@@ -16,10 +16,6 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
   }
-  body {
-    /* background-image: url("https://free4kwallpapers.com/uploads/originals/2015/07/22/plants.jpg");
-    background-size: cover; */
-  }
   .header {
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
@@ -125,22 +121,33 @@
 }
 .plant-details .buttons{
   display:flex;
-  width:70%;
+  width:100%;
   margin-top: 20px;
-  
-  /* justify-content:space-between; */
+  justify-content:space-around;
 }
 .our_button{
-  width: 250px;
-  height: 40px;
+  width: 225px;
+  height: 45px;
   border-radius: 5px;
   border-style: none;
   /* border-color: var(--primary-color); */
   background-color: #0B4604;
   color: white;
+  font-size:18px;
   cursor: pointer;
 }
 .our_button:hover{
   background-color: #2bae1c;
   transition-duration: 0.3s;
+}
+.plant-specifications{
+  width:100%;
+  display: flex;
+  column-count: 2;
+  align-items: center;
+}
+.plant-specification{
+  display: flex;
+  width : 47%;
+  border:1px solid black;
 }
