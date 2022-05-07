@@ -94,8 +94,53 @@
 .plant-img{
     width:45%;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+}
+.plant-image{
+  height:70%;
+  width:90%;
+  margin: auto;
+  border: 1px solid black;
+}
+.plant-img-options{
+  height:20%;
+  width:90%;
+  margin: auto;
+  border: 1px solid black;
 }
 .plant-details{
-    width:50%;
-    border: 1px solid black;
+  padding-left:3%;
+  width:50%;
+  border: 1px solid black;
+}
+.plant-details h1{
+  font-weight: 400;
+  font-size:45px;
+}
+.plant-details span{
+  font-weight: 400;
+  font-size: 30px;
+}
+.plant-details .buttons{
+  display:flex;
+  width:70%;
+  margin-top: 20px;
+  
+  /* justify-content:space-between; */
+}
+.our_button{
+  width: 250px;
+  height: 40px;
+  border-radius: 5px;
+  border-style: none;
+  /* border-color: var(--primary-color); */
+  background-color: #0B4604;
+  color: white;
+  cursor: pointer;
+}
+.our_button:hover{
+  background-color: #2bae1c;
+  transition-duration: 0.3s;
 }
