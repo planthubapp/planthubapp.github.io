@@ -152,7 +152,7 @@
   align-items: center;
   border:1px solid;
 }
-.plant-specification img{
+.plant-specification .img{
   width:30%;
 }
 .plant-specification .plant-specification-detail{
