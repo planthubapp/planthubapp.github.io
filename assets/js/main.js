@@ -120,6 +120,7 @@ function addCard() {
     for (let i = 0; i < json.AllPlants.length; i++) {
       var card = document.createElement("div");
       card.className = "card";
+      card.onclick = ()=>Open_DetailedView(plants[i].Plant_id);
       var cardImage = document.createElement("div");
       cardImage.className = "card-image";
       cardImage.style.backgroundImage =
@@ -139,5 +140,9 @@ function addCard() {
   else{
     div.style.justifyContent = "center";
   }
+}
+function Open_DetailedView(id){
+  localStorage.setItem("Plant_id",id);
+  location.href = "temp.html";
 }
 view_by_category();
