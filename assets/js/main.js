@@ -143,6 +143,6 @@ function addCard() {
 }
 function Open_DetailedView(id){
   localStorage.setItem("Plant_id",id);
-  location.href = "temp.html";
+  location.href = "detail.html";
 }
 view_by_category();
