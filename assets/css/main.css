@@ -82,6 +82,7 @@ section .content p {
   font-weight: 600;
   padding: 15px 8px;
 }
+
 .header ul li a:hover {
   transform: scale(1.2);
   transition: transform 400ms ease-in-out;
