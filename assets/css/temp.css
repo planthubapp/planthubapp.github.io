@@ -143,6 +143,7 @@
 .plant-specifications{
   width:100%;
   display: flex;
+  flex-direction: column;
   column-count: 2;
 }
 .plant-specification{
@@ -150,4 +151,10 @@
   width : 47%;
   align-items: center;
   border:1px solid;
+}
+.plant-specification img{
+  width:30%;
+}
+.plant-specification .plant-specification-detail{
+  width:70%;
 }
